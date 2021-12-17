@@ -1,0 +1,24 @@
+// this file acts as partials and its not compiled to css 
+
+$light-color: #f4f4f4;
+$font-stack: Arial, Helvetica, sans-serif;
+$primary-color: #0e6cff;
+// $primary-color: #e0ffff;
+$secondary-color: #ff8700;
+
+// how to use functions in sass 
+// set text color based on backgound color 
+@function set-text-color($color) {
+    @if(lightness($color) > 70) {
+        @return #333;
+    } @else {
+        @return #fff;
+    }
+}
+
+// how to use mixens 
+// set background and text color 
+@mixin set-background($color) {
+    background-color: $color;
+    color: set-text-color($color);
+}

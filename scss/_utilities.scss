@@ -1,0 +1,29 @@
+// this is a file for classes that are stand alone 
+.container {
+    max-width: 1100px;
+    padding: 0 30px;
+    margin: 0 auto;
+    overflow: auto;
+}
+
+// how to use loops in sass 
+// margin and padding classess 
+$spaceamounts: (1,2,3,4,5);
+// the # resprecents the numbers, m is for margin and p is for padding
+@each $space in $spaceamounts {
+    .m-#{$space} {
+        margin: #{$space}rem;
+    }
+
+    .my-#{$space} {
+        margin: #{$space}rem 0;
+    }
+
+    .p-#{$space} {
+        padding: #{$space}rem;
+    }
+
+    .py-#{$space} {
+        padding: #{$space}rem 0;
+    }
+}

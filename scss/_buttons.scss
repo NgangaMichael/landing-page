@@ -1,0 +1,27 @@
+// you use % when you want to share the style 
+%btn {
+    display: inline-block;
+    border-radius: 5px;
+    padding: 8px 20px;
+    margin: 3px;
+
+    &:hover {
+        transform: scale(0.98);
+    }
+}
+
+.btn-primary {
+    // this is how you include the shared styles through extending
+    @extend %btn;
+    // this how you lighten colors in sass 
+    // background-color: lighten($primary-color, 10%);
+    // including mixens in buttons
+    @include set-background(lighten($primary-color, 10%))
+}
+
+.btn-secondary {
+    @extend %btn;
+    // background-color: $secondary-color;
+    // including mixens in buttons 
+    @include set-background($secondary-color)    
+}
